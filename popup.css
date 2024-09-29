@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* A simple CSS reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Colours */
+:root {
+  --black: #000000;
+  --white: #ffffff;
+
+  --light-primary: #677FFF;
+  --light-background: #ffffff;
+  --light-surface: rgba(0, 0, 0, 0.05);
+  --light-onSurface: #ffffff;
+  --light-onSurfaceHover: rgba(0, 0, 0, 0.1);
+  --light-onSurfaceActive: rgba(0, 0, 0, 0.15);
+  --light-input: rgba(0, 0, 0, 0.2);
+  --light-inputBorder: rgba(0, 0, 0, 0.15);
+  --light-onInput: rgba(0, 0, 0, 0.75);
+  --light-onInputSubdued: rgba(0, 0, 0, 0.5);
+
+  --dark-primary: #339197;
+  --dark-background: #202020;
+  --dark-surface: rgba(255, 255, 255, 0.05);
+  --dark-onSurface: #ffffff;
+  --dark-onSurfaceHover: rgba(255, 255, 255, 0.1);
+  --dark-onSurfaceActive: rgba(255, 255, 255, 0.2);
+  --dark-input: rgba(0, 0, 0, 0.2);
+  --dark-inputBorder: rgba(255, 255, 255, 0.15);
+  --dark-onInput: #ffffff;
+  --dark-onInputSubdued: rgba(255, 255, 255, 0.5);
+}
+
+/* Popup background style */
+body {
+  background-color: var(--light-background);
+  color: var(--light-onSurface);
+  width: 300px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark-background);
+    color: var(--dark-onSurface);
+  }
+}
+
+svg {
+  transform: translateX(-8px);
+  margin-right: -8px;
+}
+
+/* Styles for buttons */
+button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  background-color: var(--light-surface);
+  color: var(--light-onSurface);
+  text-align: left;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, filter 0.1s;
+  display: flex;
+  padding: 8px 16px 8px 16px;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  line-height: 24px;
+}
+
+@media (prefers-color-scheme: dark) {
+  button {
+    background-color: var(--dark-surface);
+    color: var(--dark-onSurface);
+  }
+}
+
+/* Hover state for button */
+button:hover {
+  background-color: var(--light-onSurfaceHover);
+}
+@media (prefers-color-scheme: dark) {
+  button:hover {
+    background-color: var(--dark-onSurfaceHover);
+  }
+}
+
+/* Active state for button */
+button:active {
+  background-color: var(--light-onSurfaceActive);
+}
+@media (prefers-color-scheme: dark) {
+  button:active {
+    background-color: var(--dark-onSurfaceActive);
+  }
+}
+
+.a-c {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.a-l {
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+}
+
+.f-w {
+  flex-grow: 1;
+}
+
+/* Style for text areas */
+textarea {
+  width: calc(100% - 14px);
+  max-width: calc(100% - 14px);
+  min-width: calc(100% - 14px);
+  height: 80px;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: var(--light-input);
+  color: var(--light-onInput);
+  border: 1px dashed var(--light-inputBorder);
+    transition: border 0.3s ease;
+  outline: none;
+    transition: outline 0.3s ease;
+}
+@media (prefers-color-scheme: dark) {
+  textarea {
+    border-color: var(--dark-inputBorder);
+    background-color: var(--dark-input);
+    color: var(--dark-onInput);
+  }
+}
+textarea:focus { 
+  outline: none;
+  outline: 2px solid var(--light-primary);
+}
+@media (prefers-color-scheme: dark) {
+  textarea:focus {
+    outline: none;
+    outline: 2px solid var(--dark-primary);
+  }
+}
+
+/* Style for headings */
+h2 {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0px;
+  margin-bottom: 8px;
+  padding: 0px;
+}
+
+p {
+  color: var(--light-onSurface);
+  margin: 0px;
+  padding: 0px;
+}
+@media (prefers-color-scheme: dark) {
+  p {
+    color: var(--dark-onSurface);
+  }
+}
+
+.small {
+  color: var(--light-onSurfaceSubdued);
+  font-size: 12px;
+  line-height: 16px;
+}
+@media (prefers-color-scheme: dark) {
+  .small {
+    color: var(--dark-onSurfaceSubdued);
+  }
+}
+
+.divider {
+  background-color: var(--light-onSurfaceSubtle);
+  height: 1px;
+  margin: 16px 0px;
+}
+@media (prefers-color-scheme: dark) {
+  .divider {
+    color: var(--dark-onSurfaceSubtle);
+  }
+}
+
+.buttonArray {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.buttonList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.list-button-array {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
